@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>静态属性</title>
+    <script>
+        /*
+        直接通过类调用的属性和方法, 被称为静态属性和静态方法 (类属性, 类方法)
+
+         */
+
+        class MyClass {
+            // name = "hahah" // 实例属性
+            // fn = () => {
+            //     console.log("method");
+            // } // 实例方法
+
+            static name = "hahah" // 静态属性
+            static fn = () => {
+                // 注意, 静态方法中的 this 就不是实例对象, 而是当前的类对象
+                console.log(this);
+            } // 静态方法
+        }
+
+        // const myClass = new MyClass();
+        // console.log(myClass.name);
+        // myClass.fn();
+
+        console.log(MyClass.name);
+        MyClass.fn();
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

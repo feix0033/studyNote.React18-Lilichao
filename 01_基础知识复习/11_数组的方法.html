@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组的方法</title>
+    <script>
+        const arr = [1,2,3,4,5];
+        /*
+        map()
+            - 可以根据原有数组返回一个新数组
+            - 需要一个回调函数作为参数, 回调函数的返回值会成为新数组的元素
+            - 回调函数中有三个参数,
+                第一个参数, 是当前元素
+                第二个参数, 是当前元素的索引
+                第三个参数, 是当前数组
+         */
+
+        let result = arr.map(element => element + 2);
+        arr.map((element, index, arr) => {
+            console.log(element);
+            console.log(index);
+            console.log(arr);
+        });
+        console.log(result);
+
+        const arr2 = ["sunwukong", "zhubajie", "shaheshang"];
+
+        let strings = arr2.map((element) => "<li>" + element );
+        console.log(strings);
+
+        /*
+        filter()
+            - 对当前数组进行过滤,
+            - 会根据回调函数的结果, 决定是否保留元素, true 保留, false 不保留
+            - 不会改变原数组, 生成新数组.
+         */
+
+        let numbers = arr.filter(item => item % 2 === 0);
+        console.log(numbers);
+
+        /*
+        find()
+            - 会从当前数组中找到符合条件的第一个元素.
+         */
+
+        let numbers2 = arr.find(item => item % 2 === 0);
+        console.log(numbers2);
+
+        /*
+        reduce()
+            - 可以用来合并数组中的元素.
+            - 两个参数
+                回调函数
+                初始值
+            - 回调函数定义了合并数组的方法
+                - 四个参数
+                    - prev: 是前一次运算的结果.
+                    - curr: 是进行时当前需要运算的值.
+                    - index: 当前索引
+                    - arr : 当前数组
+         */
+
+        let redu = arr.reduce((prev, curr, index, arr) => {
+            console.log(index);
+            console.log(arr);
+            return prev + curr;
+        }, 0);
+        console.log(redu);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
