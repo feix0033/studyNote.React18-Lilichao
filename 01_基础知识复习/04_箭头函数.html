@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数</title>
+    <script>
+        /*
+        箭头函数
+        参数:
+            - 只有一个参数
+                参数 => 返回值
+            - 没有参数, 加括号
+                () => 返回值
+            - 有两个参数, 加括号
+                (参数 1, 参数 2) => 返回值
+        返回值: 箭头后面的值是函数的返回值,
+            - 返回值必须是表达式 (有值的语句)
+            - 如果返回值是对象, 必须加括号.
+            - 如果需要在箭头函数中定义复杂逻辑, 可以直接在箭头后跟代码块, 语法跟普通函数一样.
+
+         */
+
+        const fn = function(a){return 'hello';}
+        const fn2 = a => a + 'hello'; // 只有一个参数的函数
+        console.log(fn2(123))
+    </script>
+</head>
+<body>
+
+</body>
+</html>

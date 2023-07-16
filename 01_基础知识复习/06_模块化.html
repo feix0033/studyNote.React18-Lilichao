@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模块化</title>
+<!--
+默认情况下, script 标签, 不能使用 import.
+如果想让其支持模块化, 必须设置 script 的 type 属性为 module
+-->
+    <script type="module">
+        // 导入 m1 模块中的默认模块
+        // import a from './m1.js';
+        //
+        // console.log(a);
+
+        // 导入 m1 模块中的 b 和 c
+        import {b as hello, c} from './m1.js';
+        import {obj, fn} from './m1.js'
+
+        console.log(hello);
+        console.log(c);
+
+        console.log(obj);
+
+        fn();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
