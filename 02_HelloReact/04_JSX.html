@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JXS</title>
+    <script src="script/react.development.js"></script>
+    <script src="script/react-dom.development.js"></script>
+<!--    引入 babel-->
+    <script src="script/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<!--设置 js 代码被 babel 处理-->
+<script type="text/babel">
+  // 创建一个 react 元素 <button>click me</button>
+  // 命令式编程, 就是告诉浏览器应该干什么
+  // React.createElement('button', {}, 'click me');
+    // 命令式编程 需要一步一步指明步骤.
+
+  // 声明式编程, 结果导向的编程, 不管语言怎么处理, 只告诉语言要什么结果.
+  // 在 react 中可以通过 JSX (JS 的一个扩展) 来创建 react 元素. JSX 需要被 react 翻译为 JS 代码, 才能被 React 执行.
+  // 在 React 中使用 JSX 必须使用 babel 来完成'翻译'工作.
+  // const button = <button>click me</button>; // React.createElement('button', {}, 'clickme');
+
+  /*
+  JSX 就是 React.createElement() 的语法糖
+    JSX 在执行之前都会被 babel 转换为 JS 代码
+   */
+  const div = <div>
+      我是一个 div
+      <button>我是一个小按钮</button>
+  </div>
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  // root.render(button);
+  root.render(div);
+
+</script>
+</body>
+</html>
