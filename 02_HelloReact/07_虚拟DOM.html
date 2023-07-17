@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>虚拟 DOM</title>
+    <script src="script/react.development.js"></script>
+    <script src="script/react-dom.development.js"></script>
+    <script src="script/babel.min.js"></script>
+</head>
+<body>
+<button id="btn">点我一下</button>
+<div id="root"></div>
+<script type="text/babel">
+    // 创建一个数据
+    const data = ["孙悟空", "猪八戒", "沙和尚"];
+
+    // 创建列表
+    const list =
+        <ul>
+            {data.map(item =><li>{item}</li>)}
+        </ul>
+    ;
+
+    // 获取根元素
+    ReactDOM.createRoot(
+            document.getElementById('root')
+        ).render(list);
+
+    /*
+    在 React 中我们操作的元素被称为 React 元素, 并不是真正的原生 DOM 元素,
+    React 通过 DOM 将 React 元素和原生 DOM 元素,
+    但是这些操作最终都会在真实的 DOM 中体现出来.
+
+    虚拟 DOM 的好处
+        1. 降低 API 复杂度
+        2. 解决兼容问题
+        3. 提升性能 (减少 DOM 的不必要操作)
+
+    每当我们调用 root.render() 时, 页面就会发生重新渲染.
+        React 会通过 diffing 算法, 将新的元素, 和旧的元素,进行比较
+        通过比较, 找到发生变化的元素, 并且只对变化的元素进行修改,
+        没有发生的变化, 不予处理.
+     */
+
+
+
+</script>
+</body>
+</html>

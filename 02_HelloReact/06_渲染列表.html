@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JXS</title>
+    <script src="script/react.development.js"></script>
+    <script src="script/react-dom.development.js"></script>
+    <!--    引入 babel-->
+    <script src="script/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    const name = "孙悟空";
+    const lang = "en";
+    /*
+    大括号中只能用来放 JSX 表达式, 不能放语句(if statement, for statement)
+        在语句中是可以操作 JSX 表达式的.
+
+     */
+    // const div = <div>Hello {name}</div>
+    let div;
+
+    if(lang === "en") {
+        div = <div>Hello, {name}</div>
+    } else {
+        div = <div>你好, {name}</div>
+    }
+
+
+    const data = ["孙悟空", "猪八戒", "沙和尚"];
+    // 将 arr 渲染为一个列表, 在网页中显示
+    // JSX 中, 会自动将数组中的元素在页面中显示.
+    // const list = <div>{data}</div>;
+
+    // 用 for 循环在外部直接操作
+    // const arr = [];
+    // for (let i = 0; i < data.length; i++) {
+    //     arr.push(<li>{data[i]}</li>);
+    // }
+
+    // 使用 map 直接编辑元素并生成新的数组,
+    // const arr = data.map(item => <li>{item}</li>);
+    // const list = <ul>{arr}</ul>
+    const list = <ul>{data.map(item => <li>{item}</li>)}</ul>
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(list);
+
+</script>
+</body>
+</html>
