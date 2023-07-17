@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>三个 API</title>
+  <script src="script/react.development.js"></script>
+  <script src="script/react-dom.development.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  // 创建一个 React 元素, 使用 react 库
+  const button = React.createElement(
+          'button', {
+            id: 'btn',
+            type:'button',
+            className:'hello',
+            onClick: ()=>{alert('干嘛?')}
+          }, '点我一下');
+
+  // 创建一个 div
+  const div = React.createElement('div', {}, '我是一个 div2', button);
+
+
+  // 17 及之前的版本
+  // ReactDOM.render(div,document.getElementById('root'));
+
+  // React 18 新版本的方法:
+  // 获取根元素 根元素就是 react 元素要插入的位置
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+
+  /*
+  root.render()
+    - 用来将 react 元素渲染到根元素中
+    - 根元素中所有内容都会被删除, 被 react 元素替换
+    - 当重复调用 render, react 会将两次的渲染结果进行比较.
+      它会确保只修改那些发生变化的元素. 对 DOM 进行最小修改.
+   */
+  // 将元素在根元素中显示
+  root.render(div);
+</script>
+</body>
+</html>

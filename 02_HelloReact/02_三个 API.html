@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三个 API</title>
+  <script src="script/react.development.js"></script>
+  <script src="script/react-dom.development.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  /*
+  React.createElement()
+    - 用来创建一个 React 元素
+    - 参数
+      1. 标签名 (html 标签必须小写)
+      2. 标签中的属性
+        - 在设置事件时, 属性名需要修改为驼峰命名法
+          - 事件不可以调用的代码, 需要使用回调函数.
+        - class 属性 需要使用 className 来设置
+      3. 元素的内容 (子元素)
+    - 注意点:
+      React 元素最终会通过虚拟 DOM 转换为真实的 DOM 元素.
+      React 元素一旦创建就无法修改. 只能通过新创建的元素, 进行替换.
+        修改 react 元素后, 必须对根元素重新进行渲染
+        当调用 render 渲染页面时, react 会自动比较两次渲染的元素,只在真实 DOM 中更新发生变化的部分, 其他的不变.
+
+
+   */
+  // 创建一个 React 元素, 使用 react 库
+  const button = React.createElement(
+          'button', {
+            id: 'btn',
+            type:'button',
+            className:'hello',
+            onClick: ()=>{alert('干嘛?')}
+          }, '点我一下');
+
+  // 创建一个 div
+  const div = React.createElement('div', {}, '我是一个 div', button);
+
+  // 获取根元素
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+
+  // 将元素在根元素中显示
+  root.render(div);
+
+</script>
+</body>
+</html>
