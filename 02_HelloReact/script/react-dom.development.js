@@ -844,7 +844,7 @@
 
   // ATTENTION
   // When adding new symbols to this file,
-  // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
+  // Please consider also adding to 'react-devtools-shared/04_Learn_Log_src/backend/ReactSymbols'
   // The Symbol used to tag the ReactElement-like types.
   var REACT_ELEMENT_TYPE = Symbol.for('react.element');
   var REACT_PORTAL_TYPE = Symbol.for('react.portal');
@@ -2957,7 +2957,7 @@
       case 'annotation-xml':
       case 'color-profile':
       case 'font-face':
-      case 'font-face-src':
+      case 'font-face-04_Learn_Log_src':
       case 'font-face-uri':
       case 'font-face-format':
       case 'font-face-name':
@@ -8406,7 +8406,7 @@
   function isSameOriginFrame(iframe) {
     try {
       // Accessing the contentDocument of a HTMLIframeElement can cause the browser
-      // to throw, e.g. if it has a cross-origin src attribute.
+      // to throw, e.g. if it has a cross-origin 04_Learn_Log_src attribute.
       // Safari will show an error in the console when the access results in "Blocked a frame with origin". e.g:
       // iframe.contentDocument.defaultView;
       // A safety way is to access one of the cross origin properties: Window or Location

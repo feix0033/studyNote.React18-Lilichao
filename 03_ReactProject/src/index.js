@@ -1,4 +1,4 @@
-// src/index.js 是 JS 的入口文件.
+// 04_Learn_Log_src/index.js 是 JS 的入口文件.
 
 // 引入 React DOM
 import ReactDOM from 'react-dom/client'
