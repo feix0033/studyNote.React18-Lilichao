@@ -8,32 +8,54 @@
          * 可以通过 ... 展开一个数组.
          * 理论上只要能遍历, 就能展开, 通常展开数组.
          */
-        /* 在函数中展开*/
-        function fn(a, b, c) {
-            return a + b + c;
-        }
+        let arr = [1,2,3,4,5,6];
+        // console.log(...arr);
 
-        const arr = [1,2,3];
+        /* 对数组进行深复制*/
+        // 浅复制
+        // const arr2 = arr;
+        // 深复制
+        // const arr2 = [...arr];
+
+        // console.log(arr);
+        // arr2[2] = 14;
+        // console.log(arr2);
+        // console.log(arr);
+
+        /* 向数组中添加元素*/
+        // arr = [45,23,arr,7,8]; //向数组中插入数组
+        // arr = [45,23,...arr,7,8]; // 向原数组中插入元素
+        // console.log(arr);
+
+        /* 在函数中展开*/
+        // function fn(a, b, c) {
+        //     return a + b + c;
+        // }
+        //
+        // const arr = [1,2,3];
 
         // 计算数组中三个数字的和
-        let result = fn(...arr); //...arr 表示把数组展开为三个元素.
+        // let result = fn(...arr); //...arr 表示把数组展开为三个元素.
 
 
         /* 对象的展开 */
-
-        const arr2 = [...arr]; // 相当于将 arr 浅复制给 arr2
-        const arr3 = [7,8,9,...arr,4,5,6]; //给前后加元素
-        console.log(arr2)
-
         const obj = {
             name: 'sun',
             age: 18,
             gender: 'man'
         }
+        // console.log({...obj} === obj); //将对象的属性在一个匿名函数中展开, 返回值为 false 证明这是两个实例.
 
         // const obj2 = {...obj} // 将 obj 在新的对象中展开, 相当于浅复制
-        const obj2 = {...obj, addr : '花果山'}
-        const obj3 = {name:'zhu', ...obj} //当属性同名的时候, 后一个属性值覆盖前一个.
+        // const obj3 = obj;
+        // console.log(obj2 === obj); //返回 false
+        // console.log(obj3 === obj); //返回 true
+
+
+        const obj = {...obj, addr : '花果山'}
+        console.log(obj);
+        // const obj3 = {name:'zhu', ...obj} //当属性同名的时候, 后一个属性值覆盖前一个.
+
     </script>
 
 </head>
