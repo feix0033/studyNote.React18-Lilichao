@@ -683,7 +683,7 @@
         var componentName = getComponentNameFromType(ReactCurrentOwner.current.type);
 
         if (!didWarnAboutStringRefs[componentName]) {
-          error('Component "%s" contains the string ref "%s". ' + 'Support for string refs will be removed in a future major release. ' + 'This case cannot be automatically converted to an arrow function. ' + 'We ask you to manually fix this case by using useRef() or createRef() instead. ' + 'Learn more about using refs safely here: ' + 'https://reactjs.org/link/strict-mode-string-ref', componentName, config.ref);
+          error('Components "%s" contains the string ref "%s". ' + 'Support for string refs will be removed in a future major release. ' + 'This case cannot be automatically converted to an arrow function. ' + 'We ask you to manually fix this case by using useRef() or createRef() instead. ' + 'Learn more about using refs safely here: ' + 'https://reactjs.org/link/strict-mode-string-ref', componentName, config.ref);
 
           didWarnAboutStringRefs[componentName] = true;
         }
@@ -2263,7 +2263,7 @@
 
         var _name = getComponentNameFromType(type);
 
-        error('Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?', _name || 'Unknown');
+        error('Components %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?', _name || 'Unknown');
       }
 
       if (typeof type.getDefaultProps === 'function' && !type.getDefaultProps.isReactClassApproved) {

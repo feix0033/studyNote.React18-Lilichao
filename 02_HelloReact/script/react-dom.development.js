@@ -13126,7 +13126,7 @@
     }
   }
 
-  var fakeInternalInstance = {}; // React.Component uses a shared frozen object by default.
+  var fakeInternalInstance = {}; // React.Components uses a shared frozen object by default.
   // We'll use it to determine whether we need to initialize legacy refs.
 
   var emptyRefsObject = new React.Component().refs;
@@ -13387,7 +13387,7 @@
       }
 
       if (ctor.prototype && ctor.prototype.isPureReactComponent && typeof instance.shouldComponentUpdate !== 'undefined') {
-        error('%s has a method called shouldComponentUpdate(). ' + 'shouldComponentUpdate should not be used when extending React.PureComponent. ' + 'Please extend React.Component if shouldComponentUpdate is used.', getComponentNameFromType(ctor) || 'A pure component');
+        error('%s has a method called shouldComponentUpdate(). ' + 'shouldComponentUpdate should not be used when extending React.PureComponent. ' + 'Please extend React.Components if shouldComponentUpdate is used.', getComponentNameFromType(ctor) || 'A pure component');
       }
 
       if (typeof instance.componentDidUnmount === 'function') {
@@ -14615,7 +14615,7 @@
       }
 
       if (typeof child._store !== 'object') {
-        throw new Error('React Component in warnForMissingKey should have a _store. ' + 'This error is likely caused by a bug in React. Please file an issue.');
+        throw new Error('React Components in warnForMissingKey should have a _store. ' + 'This error is likely caused by a bug in React. Please file an issue.');
       }
 
       child._store.validated = true;
@@ -14731,7 +14731,7 @@
 
       ownerHasFunctionTypeWarning[componentName] = true;
 
-      error('Functions are not valid as a React child. This may happen if ' + 'you return a Component instead of <Component /> from render. ' + 'Or maybe you meant to call this function rather than return it.');
+      error('Functions are not valid as a React child. This may happen if ' + 'you return a Components instead of <Components /> from render. ' + 'Or maybe you meant to call this function rather than return it.');
     }
   }
 
@@ -20833,7 +20833,7 @@
         var componentName = getComponentNameFromType(Component) || 'Unknown';
 
         if (!didWarnAboutBadClass[componentName]) {
-          error("The <%s /> component appears to have a render method, but doesn't extend React.Component. " + 'This is likely to cause errors. Change %s to extend React.Component instead.', componentName, componentName);
+          error("The <%s /> component appears to have a render method, but doesn't extend React.Components. " + 'This is likely to cause errors. Change %s to extend React.Components instead.', componentName, componentName);
 
           didWarnAboutBadClass[componentName] = true;
         }
@@ -20864,7 +20864,7 @@
         var _componentName = getComponentNameFromType(Component) || 'Unknown';
 
         if (!didWarnAboutModulePatternComponent[_componentName]) {
-          error('The <%s /> component appears to be a function component that returns a class instance. ' + 'Change %s to a class that extends React.Component instead. ' + "If you can't use a class try assigning the prototype on the function as a workaround. " + "`%s.prototype = React.Component.prototype`. Don't use an arrow function since it " + 'cannot be called with `new` by React.', _componentName, _componentName, _componentName);
+          error('The <%s /> component appears to be a function component that returns a class instance. ' + 'Change %s to a class that extends React.Components instead. ' + "If you can't use a class try assigning the prototype on the function as a workaround. " + "`%s.prototype = React.Components.prototype`. Don't use an arrow function since it " + 'cannot be called with `new` by React.', _componentName, _componentName, _componentName);
 
           didWarnAboutModulePatternComponent[_componentName] = true;
         }
@@ -20878,7 +20878,7 @@
         var _componentName2 = getComponentNameFromType(Component) || 'Unknown';
 
         if (!didWarnAboutModulePatternComponent[_componentName2]) {
-          error('The <%s /> component appears to be a function component that returns a class instance. ' + 'Change %s to a class that extends React.Component instead. ' + "If you can't use a class try assigning the prototype on the function as a workaround. " + "`%s.prototype = React.Component.prototype`. Don't use an arrow function since it " + 'cannot be called with `new` by React.', _componentName2, _componentName2, _componentName2);
+          error('The <%s /> component appears to be a function component that returns a class instance. ' + 'Change %s to a class that extends React.Components instead. ' + "If you can't use a class try assigning the prototype on the function as a workaround. " + "`%s.prototype = React.Components.prototype`. Don't use an arrow function since it " + 'cannot be called with `new` by React.', _componentName2, _componentName2, _componentName2);
 
           didWarnAboutModulePatternComponent[_componentName2] = true;
         }
@@ -29438,7 +29438,7 @@
     }
 
     if (parentComponent == null || !has(parentComponent)) {
-      throw new Error('parentComponent must be a valid React Component');
+      throw new Error('parentComponent must be a valid React Components');
     }
 
     return legacyRenderSubtreeIntoContainer(parentComponent, element, containerNode, false, callback);

@@ -1,7 +1,7 @@
 import React from "react";
 
 /*
-类组件必须要继承 React.Component
+类组件必须要继承 React.Components
     相较于函数组件, 类组件的编写要麻烦一些,
     但是他俩的功能是基本一样的.
  */
